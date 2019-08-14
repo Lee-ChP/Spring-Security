@@ -40,7 +40,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(new BCryptPasswordEncoder())
                 .withUser("Lee-ChP").password(new BCryptPasswordEncoder().encode("123456")).roles("Admin","Normal")
                 .and()
-                .withUser("Guest").password(new BCryptPasswordEncoder().encode("111111")).roles("Normal");
+                .withUser("Guest").password(new BCryptPasswordEncoder().encode("111111")).roles("Normal")
+                .and()
+                /** 当然，也可以像noop用户那样绕过加密， 方法很简单，就是在密码前添加{noop}，切忌输入密码的时候把{noop}也输入进去 */
+                .withUser("noop").password("{noop}111111").roles("Normal");
     }
 
     /**
