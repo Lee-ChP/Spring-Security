@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * 自定义打包数据库的用户信息，为校验做准备
+ */
 @Component
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
     @Autowired

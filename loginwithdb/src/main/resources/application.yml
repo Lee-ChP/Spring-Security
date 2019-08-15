@@ -8,7 +8,7 @@ spring:
     url: jdbc:mysql:///springsecurity?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: qianren.com
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
