@@ -12,13 +12,21 @@ import java.io.IOException;
 
 public class IpAuthenticationProcessingFilter extends AbstractAuthenticationProcessingFilter {
 
+    /**
+     * Step 6： 开始浏览，先到入口端点
+     */
     //使用 /ipVerify端点对ip进行认证
     public IpAuthenticationProcessingFilter() {
         super(new AntPathRequestMatcher("/ipVerify"));
+        System.out.println("This is IpAuthenticationProcessingFilter()");
     }
 
+    /**
+     * Step 7： 接着跳转到登录页面，点击登录后，该方法获取用户信息
+     */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws AuthenticationException, IOException, ServletException {
+        System.out.println("This is attemptAuthentication()");
         //获取host信息
         String host = httpServletRequest.getRemoteHost();
         if (host.equals("0:0:0:0:0:0:0:1")) {

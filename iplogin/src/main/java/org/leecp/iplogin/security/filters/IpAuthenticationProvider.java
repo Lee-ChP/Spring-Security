@@ -21,8 +21,15 @@ public class IpAuthenticationProvider implements AuthenticationProvider {
 
     }
 
+    /**
+     * Step 10 进行认证，成功后调用step 11，让step 11进行用户信息打包
+     * @param authentication
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        System.out.println("This is authenticate()");
         IpAuthenticationToken ipAuthenticationToken = (IpAuthenticationToken) authentication;
         String ip = ipAuthenticationToken.getIp();
         SimpleGrantedAuthority simpleGrantedAuthority = ipAuthorityMap.get(ip);
@@ -35,9 +42,15 @@ public class IpAuthenticationProvider implements AuthenticationProvider {
         }
     }
 
+    /**
+     * Step ： 9 判断支持认证的方法
+     * @param aClass
+     * @return
+     */
     //只支持IpAuthenticationToken该身份
     @Override
     public boolean supports(Class<?> aClass) {
+        System.out.println("This is supports()");
         return (IpAuthenticationToken.class.isAssignableFrom(aClass));
     }
 }
