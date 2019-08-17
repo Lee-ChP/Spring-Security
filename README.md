@@ -11,3 +11,5 @@
 + customedfilter: 自定义一个校验拦截器。前端依旧是抄的，要改实体类属性，记得更改前端数据绑定
 ---
 + rememberme: 实现一个简单的记住我功能。
+---
++ oauth2: 一个简单的oauth2认证demo
