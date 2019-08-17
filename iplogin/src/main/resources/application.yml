@@ -1,0 +1,7 @@
+
+logging:
+  level:
+    org:
+      springframework:
+        security: trace
+  file: ./log/spring-security.log
